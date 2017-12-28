@@ -67,7 +67,6 @@ export class AddOfficeComponent implements OnInit {
   }
 
   save() {
-    console.log(this.Office);
     if(this.id){
       this._commonService.updateofficedetail(this.Office)
       .subscribe((res: Officedetail) =>
@@ -78,11 +77,10 @@ export class AddOfficeComponent implements OnInit {
       .subscribe((res: Officedetail) =>
           this.onSuccessSave(res), (res: Response) => this.onError(res.json()));
     }
-
   }
 
   onSuccessSave(data){
-    console.log(data);
+    alert(data);
   }
 
   onError(error){
